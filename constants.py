@@ -1,5 +1,0 @@
-SHAREPOINT_USERNAME = "2018s17060@stu.cmb.ac.lk"
-SHAREPOINT_PASSWORD = "4s7Samith"
-SHAREPOINT_URL = "https://uniofcol.sharepoint.com"
-SHAREPOINT_SITE_NAME = "TeamsProjectWise"
-SHAREPOINT_DOC = "Shared Documents"
