@@ -1,25 +1,19 @@
 from urllib import response
-import environ
 from office365.sharepoint.client_context import ClientContext
 from office365.runtime.auth.user_credential import UserCredential
 from office365.sharepoint.files.file import File
 import datetime
+from constants import *
+import os
 
-env = environ.Env()
-environ.Env.read_env()
-
-USERNAME = env('sharepoint_email')
-PASSWORD = env('sharepoint_password')
-SHAREPOINT_SITE = env('sharepoint_url_site')
-SHAREPOINT_SITE_NAME = env('sharepoint_site_name')
-SHAREPOINT_DOC = env('sharepoint_doc_library')
+SHAREPOINT_PASSWORD = os.getenv('SHAREPOINT_PASSWORD')
 
 class SharePoint:
     def _auth(self):
         conn = ClientContext(SHAREPOINT_SITE).with_credentials(
             UserCredential(
-                USERNAME,
-                PASSWORD
+                SHAREPOINT_USERNAME,
+                SHAREPOINT_PASSWORD
             )
         )
         return conn
